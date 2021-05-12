@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div.parent {
+      position: relative;
+      height: 200px;
+      border: 3px solid red;
+    }
+    div.absolute {
+      position: absolute;
+      width: 50%; bottom: 10px;
+      border: 3px solid blue;
+    }
+    div.relative {
+      position: relative;
+      width: 50%; bottom: 5px;
+      border: 3px solid blue;
+    }
+    div.sticky {
+      position: sticky;
+      width: 50%; bottom: 10px;
+      border: 3px solid blue;
+    }
+    div.fixed {
+      position: fixed;
+      width: 50%; top: 10px;
+      border: 3px solid green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bottom 속성</h1>
+  <div class="parent"> position absolute
+    <div class="absolute">positoin absolute botton 10px</div>
+  </div>
+  <div class="parent"> position relative
+    <div class="relative">positoin relative botton 5px</div>
+  </div>
+  <div class="fixed">position fixed</div>
+  <div class="parent"> position sticky
+    <div class="sticky">positoin sticky botton 10px</div>
+  </div>
+</body>
+</html>
