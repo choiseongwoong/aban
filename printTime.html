@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시간표시</title>
+  <style>
+    p {
+      color:#0000ff;
+      font-size: 5em;
+    }
+    #clock {
+      color:#f59f00;
+    }
+    #show {
+      color:#f59f00;
+    }
+    * {
+      background-color: rgb(176, 226, 226);
+      text-align: center;
+    }
+  </style>
+  <script>
+    function printTime(){
+      var clock = document.getElementById("clock");
+      var now = new Date();
+      var nowTime = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+      clock.innerHTML = nowTime;
+      setTimeout("printTime()",1000);
+    }
+    window.onload = function(){
+      printTime();
+
+    function start(){
+      startButton.onclick = null;
+      stopButton.onclick = stop;
+      startTime = new Date();
+      startSeconds = startTime.getSeconds();
+      timer = setInterval(function(){
+        let now = new Date();
+        nowSeconds = now.getSeconds();
+        show.innerHTML = (nowSeconds - startSeconds);
+    }, 1000);
+}
+
+function stop(){
+    clearInterval(timer);
+    startButton.onclick = start;
+}
+
+function reset(){
+    startButton.onclick = start;
+    clearInterval(timer);
+    show.innerHTML = "0";
+}
+
+let startButton = document.getElementById("start");
+let stopButton = document.getElementById("stop");
+let show = document.getElementById("show");
+let resetButton = document.getElementById("reset");
+startButton.onclick = start;
+resetButton.onclick = reset;
+}
+  </script>
+</head>
+<body>
+  <p>현재 <span id="clock"></span> 입니다.</p>
+
+  <p id ="show">0</p>
+    <input type="button" value ="start" id ="start">
+    <input type ="button" value ="stop" id ="stop">
+    <input type ="button" value ="reset" id ="reset">
+</body>
+</html>
