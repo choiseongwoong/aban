@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>function Document</title>
+  <style>
+    .button {
+      background-color: aqua;
+      border: none;
+      color: blue;
+      font-size: 36px;
+      padding: 10px 20px;
+      margin: 2px;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>JAVASCRIPT FUNCTION</h2>
+
+  <p id="demo">원래 문장 입니다</p>
+
+  <button type="button" class="button" onclick="myFunction()">Click 바꾸기</button>
+  <button type="button" class="button" onclick="myFunction2()">Click 되돌리기</button>
+
+  <script>
+    function myFunction(){
+      document.getElementById("demo").innerHTML = "바꾼 문장 입니다";
+    }
+    function myFunction2(){
+      document.getElementById("demo").innerHTML = "믿음 소망 사랑 그중에 제일은 사랑입니다.";
+    }
+  </script>
+</body>
+</html>
